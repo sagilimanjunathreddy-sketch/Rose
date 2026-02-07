@@ -1,0 +1,896 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Rose Day Amulya 🌹</title>
+<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  height: 100vh;
+  overflow: hidden;
+  background: linear-gradient(135deg, #fff0f3, #ffccd5, #ffb3c6, #ff8fab);
+  background-size: 400% 400%;
+  animation: gradientBG 15s ease infinite;
+  position: relative;
+}
+
+@keyframes gradientBG {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Falling roses */
+.rose-fall {
+  position: absolute;
+  animation: roseFall linear infinite;
+  opacity: 0.8;
+  pointer-events: none;
+  z-index: 1;
+  font-size: 30px;
+}
+
+@keyframes roseFall {
+  from { transform: translateY(-120vh) rotate(0deg); }
+  to   { transform: translateY(120vh) rotate(360deg); }
+}
+
+/* Glowing roses */
+.rose-glow {
+  position: absolute;
+  color: #ff4d6d;
+  text-shadow: 0 0 20px #ff4d6d, 0 0 40px #ff4d6d;
+  animation: rosePulse 1.5s infinite;
+  font-size: 40px;
+}
+
+@keyframes rosePulse {
+  0%, 100% { transform: scale(1); opacity: 0.8; }
+  50% { transform: scale(1.2); opacity: 1; }
+}
+
+/* Main container */
+.container {
+  position: relative;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 20px;
+}
+
+/* Rose bouquet card */
+.rose-card {
+  background: linear-gradient(145deg, #fffafb, #ffe6ea);
+  border-radius: 25px;
+  padding: 50px 40px;
+  width: 90%;
+  max-width: 500px;
+  box-shadow: 
+    0 20px 60px rgba(255, 77, 109, 0.3),
+    0 0 100px rgba(255, 182, 193, 0.5),
+    inset 0 0 30px rgba(255, 255, 255, 0.8);
+  position: relative;
+  overflow: hidden;
+  border: 2px solid rgba(255, 182, 193, 0.3);
+  animation: cardOpen 1s ease-out;
+}
+
+@keyframes cardOpen {
+  from { transform: translateY(-100px) scale(0.8); opacity: 0; }
+  to { transform: translateY(0) scale(1); opacity: 1; }
+}
+
+.rose-card::before {
+  content: '🌹';
+  position: absolute;
+  top: -25px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 50px;
+  text-shadow: 0 5px 15px rgba(255, 77, 109, 0.4);
+  z-index: 2;
+}
+
+/* Rose bouquet */
+.rose-bouquet {
+  position: relative;
+  margin: 20px auto 30px;
+  width: 200px;
+  height: 200px;
+}
+
+.rose-bouquet img {
+  width: 100%;
+  height: 100%;
+  filter: drop-shadow(0 10px 20px rgba(0,0,0,0.2));
+  animation: float 3s ease-in-out infinite, bouquetGlow 2s ease-in-out infinite alternate;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0) rotate(-2deg); }
+  50% { transform: translateY(-20px) rotate(2deg); }
+}
+
+@keyframes bouquetGlow {
+  from { filter: drop-shadow(0 10px 20px rgba(255, 77, 109, 0.3)); }
+  to { filter: drop-shadow(0 10px 30px rgba(255, 77, 109, 0.6)) brightness(1.1); }
+}
+
+/* Title styling */
+.title {
+  font-family: 'Dancing Script', cursive;
+  font-size: 2.8rem;
+  color: #ff4d6d;
+  margin: 20px 0;
+  text-align: center;
+  text-shadow: 0 2px 10px rgba(255, 77, 109, 0.3);
+  animation: textGlow 2s infinite alternate;
+}
+
+@keyframes textGlow {
+  from { text-shadow: 0 2px 10px rgba(255, 77, 109, 0.3); }
+  to { text-shadow: 0 2px 20px rgba(255, 77, 109, 0.6), 0 0 30px rgba(255, 77, 109, 0.4); }
+}
+
+.subtitle {
+  font-size: 1.4rem;
+  color: #666;
+  margin-bottom: 40px;
+  text-align: center;
+  font-weight: 300;
+}
+
+/* Buttons */
+.buttons {
+  display: flex;
+  gap: 25px;
+  margin-top: 30px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.btn {
+  padding: 18px 45px;
+  font-size: 1.3rem;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  min-width: 160px;
+}
+
+.btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+  transition: 0.5s;
+}
+
+.btn:hover::before {
+  left: 100%;
+}
+
+#yesBtn {
+  background: linear-gradient(135deg, #ff4d6d, #ff758c);
+  color: white;
+  box-shadow: 0 10px 30px rgba(255, 77, 109, 0.4);
+  z-index: 100;
+}
+
+#yesBtn:hover {
+  transform: translateY(-5px) scale(1.05);
+  box-shadow: 0 15px 40px rgba(255, 77, 109, 0.6);
+}
+
+#noBtn {
+  background: linear-gradient(135deg, #ffafcc, #ffb3c6);
+  color: #ff4d6d;
+  box-shadow: 0 10px 30px rgba(255, 175, 204, 0.4);
+  position: relative;
+  transition: all 0.1s ease;
+}
+
+#noBtn:hover {
+  transform: scale(0.95);
+}
+
+/* Rose Day message */
+.message {
+  font-family: 'Dancing Script', cursive;
+  font-size: 1.6rem;
+  color: #ff4d6d;
+  margin-top: 30px;
+  text-align: center;
+  line-height: 1.6;
+  opacity: 0;
+  animation: fadeIn 2s forwards 1s;
+}
+
+@keyframes fadeIn {
+  to { opacity: 1; }
+}
+
+/* Sparkle effect */
+.sparkle {
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  background: white;
+  border-radius: 50%;
+  animation: sparkle 2s infinite;
+}
+
+@keyframes sparkle {
+  0%, 100% { opacity: 0; transform: scale(0); }
+  50% { opacity: 1; transform: scale(1); }
+}
+
+/* Celebration screen */
+.celebration {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, #fff0f3, #ffccd5, #ffb3c6, #ff8fab);
+  background-size: 400% 400%;
+  animation: gradientBG 15s ease infinite;
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  z-index: 1000;
+  padding: 20px;
+}
+
+.celebration.show {
+  display: flex;
+  animation: celebrationEnter 1s ease-out;
+}
+
+@keyframes celebrationEnter {
+  from { opacity: 0; transform: scale(0.8); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+.celebration h1 {
+  font-family: 'Dancing Script', cursive;
+  font-size: 4rem;
+  color: #ff4d6d;
+  margin-bottom: 30px;
+  text-shadow: 0 5px 20px rgba(255, 77, 109, 0.4);
+  animation: titlePulse 2s infinite;
+}
+
+@keyframes titlePulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+}
+
+.celebration p {
+  font-size: 1.8rem;
+  color: #333;
+  margin: 15px 0;
+  max-width: 600px;
+  line-height: 1.6;
+}
+
+.celebration .rose-message {
+  font-family: 'Dancing Script', cursive;
+  font-size: 2.5rem;
+  color: #ff4d6d;
+  margin: 30px 0;
+}
+
+/* Music button */
+.music-btn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 50px;
+  height: 50px;
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 100;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+  font-size: 24px;
+  transition: all 0.3s ease;
+}
+
+.music-btn:hover {
+  transform: scale(1.1);
+  background: white;
+}
+
+/* Heart petals */
+.heart-petal {
+  position: absolute;
+  font-size: 20px;
+  animation: petalFall linear infinite;
+  opacity: 0.7;
+  pointer-events: none;
+  z-index: 1;
+}
+
+@keyframes petalFall {
+  from { transform: translateY(-100px) rotate(0deg); opacity: 0; }
+  10% { opacity: 1; }
+  90% { opacity: 1; }
+  to { transform: translateY(100vh) rotate(360deg); opacity: 0; }
+}
+
+/* Rose Day specific elements */
+.rose-day-title {
+  font-family: 'Dancing Script', cursive;
+  font-size: 2rem;
+  color: #ff4d6d;
+  margin-top: 10px;
+  text-align: center;
+}
+
+.rose-count {
+  font-size: 1.2rem;
+  color: #ff758c;
+  margin: 10px 0;
+  text-align: center;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .rose-card {
+    padding: 30px 20px;
+  }
+  
+  .title {
+    font-size: 2.2rem;
+  }
+  
+  .subtitle {
+    font-size: 1.2rem;
+  }
+  
+  .btn {
+    padding: 15px 35px;
+    font-size: 1.1rem;
+    min-width: 140px;
+  }
+  
+  .buttons {
+    gap: 15px;
+  }
+  
+  .celebration h1 {
+    font-size: 3rem;
+  }
+  
+  .celebration p {
+    font-size: 1.4rem;
+  }
+}
+</style>
+</head>
+<body>
+
+<!-- Background Music -->
+<audio id="bgMusic" loop>
+  <source src="https://assets.mixkit.co/music/preview/mixkit-romantic-sunset-687.mp3" type="audio/mpeg">
+</audio>
+
+<!-- Music Toggle Button -->
+<div class="music-btn" id="musicToggle">🎵</div>
+
+<!-- Main Content -->
+<div class="container">
+  <div class="rose-card" id="roseCard">
+    <div class="rose-bouquet">
+      <!-- Rose Bouquet -->
+      <img src="https://cdn-icons-png.flaticon.com/512/590/590742.png" alt="Rose Bouquet">
+    </div>
+    
+    <h1 class="title">Happy Rose Day Amulya 🌹</h1>
+    
+    <div class="rose-day-title">A Bouquet of Love Just for You</div>
+    
+    <div class="rose-count">🌹 7 Roses for 7 Beautiful Days Ahead 🌹</div>
+    
+    <p class="subtitle">Like every rose has its unique beauty,<br>you have a special place in my heart 💖</p>
+    
+    <div class="message" id="roseMessage">
+      This rose carries my love,<br>
+      Each petal holds a promise,<br>
+      Every thorn protects my feelings<br>
+      Will you accept my rose?
+    </div>
+    
+    <div class="buttons">
+      <button class="btn" id="yesBtn">Accept Rose 🌹</button>
+      <button class="btn" id="noBtn">No 🙈</button>
+    </div>
+  </div>
+</div>
+
+<!-- Celebration Screen -->
+<div class="celebration" id="celebration">
+  <img src="https://cdn-icons-png.flaticon.com/512/590/590742.png" alt="Rose Bouquet" style="width: 200px; margin-bottom: 30px; animation: float 3s ease-in-out infinite;">
+  
+  <h1>Amulya! You Accepted! 🌹💕</h1>
+  
+  <p style="font-size: 2rem; margin: 20px 0; color: #ff4d6d;">
+    My heart is blooming with joy!<br>
+    Like a rose that found its sunshine ☀️
+  </p>
+  
+  <div class="rose-message">
+    "Every rose I give you<br>
+    Is a promise of my love<br>
+    Today and forever"
+  </div>
+  
+  <p style="font-size: 1.8rem; color: #ff758c; margin-top: 30px;">
+    Red roses for passion,<br>
+    Pink roses for admiration,<br>
+    White roses for purity,<br>
+    And all of them for YOU 💫
+  </p>
+  
+  <p style="font-size: 2.5rem; margin-top: 40px; color: #ff4d6d; font-family: 'Dancing Script', cursive;">
+    Happy Rose Day, My Beautiful Amulya! 💝
+  </p>
+  
+  <p style="font-size: 1.2rem; color: #666; margin-top: 30px;">
+    With all my love on Rose Day,<br>
+    Forever yours,<br>
+    Manjunatha 🧸🌹
+  </p>
+</div>
+
+<script>
+// Create falling roses
+setInterval(() => {
+  const rose = document.createElement("div");
+  rose.className = "rose-fall";
+  rose.innerHTML = "🌹";
+  rose.style.left = Math.random() * 100 + "vw";
+  rose.style.fontSize = (25 + Math.random() * 35) + "px";
+  rose.style.color = `hsl(${340 + Math.random() * 20}, 100%, 65%)`;
+  rose.style.animationDuration = (6 + Math.random() * 8) + "s";
+  rose.style.filter = `blur(${Math.random() * 1}px)`;
+  document.body.appendChild(rose);
+  setTimeout(() => rose.remove(), 14000);
+}, 400);
+
+// Create glowing roses
+setInterval(() => {
+  const rose = document.createElement("div");
+  rose.className = "rose-glow";
+  rose.innerHTML = "🌹";
+  rose.style.left = Math.random() * 100 + "vw";
+  rose.style.top = Math.random() * 100 + "vh";
+  rose.style.fontSize = (30 + Math.random() * 40) + "px";
+  rose.style.opacity = 0.6 + Math.random() * 0.4;
+  document.body.appendChild(rose);
+  setTimeout(() => rose.remove(), 3000);
+}, 800);
+
+// Create heart petals
+setInterval(() => {
+  const petal = document.createElement("div");
+  petal.className = "heart-petal";
+  petal.innerHTML = "🌸";
+  petal.style.left = Math.random() * 100 + "vw";
+  petal.style.fontSize = (15 + Math.random() * 25) + "px";
+  petal.style.color = `hsl(${320 + Math.random() * 40}, 100%, 70%)`;
+  petal.style.animationDuration = (8 + Math.random() * 12) + "s";
+  petal.style.animationDelay = Math.random() * 5 + "s";
+  document.body.appendChild(petal);
+  setTimeout(() => petal.remove(), 20000);
+}, 500);
+
+// Create sparkles
+setInterval(() => {
+  const sparkle = document.createElement("div");
+  sparkle.className = "sparkle";
+  sparkle.style.left = Math.random() * 100 + "vw";
+  sparkle.style.top = Math.random() * 100 + "vh";
+  sparkle.style.animationDelay = Math.random() * 2 + "s";
+  sparkle.style.background = `hsl(${Math.random() * 360}, 100%, 70%)`;
+  document.body.appendChild(sparkle);
+  setTimeout(() => sparkle.remove(), 2000);
+}, 100);
+
+// Music control
+const bgMusic = document.getElementById('bgMusic');
+const musicToggle = document.getElementById('musicToggle');
+let musicPlaying = false;
+
+musicToggle.addEventListener('click', () => {
+  if (musicPlaying) {
+    bgMusic.pause();
+    musicToggle.innerHTML = "🔇";
+    musicToggle.style.background = "#ff4d6d";
+    musicToggle.style.color = "white";
+  } else {
+    bgMusic.volume = 0.3;
+    bgMusic.play().catch(e => console.log("Autoplay prevented:", e));
+    musicToggle.innerHTML = "🎵";
+    musicToggle.style.background = "rgba(255, 255, 255, 0.9)";
+    musicToggle.style.color = "inherit";
+  }
+  musicPlaying = !musicPlaying;
+});
+
+// No button with progressive messages (Rose Day themed)
+const noBtn = document.getElementById('noBtn');
+let noCount = 0;
+const noMessages = [
+  "No 🙈",
+  "Are you sure? 🌹",
+  "But it's Rose Day! 🥺",
+  "Think of the roses! 💔",
+  "Pretty please? 💖",
+  "Just one rose? 🌹",
+  "For me? 🥰",
+  "I grew them for you! 🌷",
+  "Last petal... 🌹",
+  "Okay... Yes! 💝"
+];
+
+noBtn.addEventListener('mouseover', () => {
+  if (noCount < 8) {
+    const moveDistance = 100;
+    const currentLeft = noBtn.offsetLeft;
+    const currentTop = noBtn.offsetTop;
+    const maxLeft = window.innerWidth - noBtn.offsetWidth - 20;
+    const maxTop = window.innerHeight - noBtn.offsetHeight - 20;
+    
+    let newLeft, newTop;
+    do {
+      newLeft = 20 + Math.random() * (maxLeft - 20);
+      newTop = 20 + Math.random() * (maxTop - 20);
+    } while (
+      Math.abs(newLeft - currentLeft) < moveDistance || 
+      Math.abs(newTop - currentTop) < moveDistance
+    );
+    
+    noBtn.style.position = "fixed";
+    noBtn.style.left = newLeft + "px";
+    noBtn.style.top = newTop + "px";
+    
+    // Change button text progressively
+    noCount++;
+    if (noCount < noMessages.length) {
+      noBtn.innerHTML = noMessages[noCount];
+      
+      // Make button more pink/red as it progresses
+      const pinkness = Math.min(255, 175 + noCount * 10);
+      noBtn.style.background = `linear-gradient(135deg, rgb(255, ${pinkness}, ${pinkness}), rgb(255, ${pinkness-30}, ${pinkness-20}))`;
+      noBtn.style.color = noCount > 5 ? "white" : "#ff4d6d";
+    }
+    
+    // Create a rose where button was
+    const trailRose = document.createElement("div");
+    trailRose.innerHTML = "🌹";
+    trailRose.style.position = "fixed";
+    trailRose.style.left = (currentLeft + noBtn.offsetWidth/2) + "px";
+    trailRose.style.top = (currentTop + noBtn.offsetHeight/2) + "px";
+    trailRose.style.fontSize = "25px";
+    trailRose.style.opacity = "0.8";
+    trailRose.style.zIndex = "99";
+    trailRose.style.pointerEvents = "none";
+    trailRose.style.transform = "translate(-50%, -50%)";
+    document.body.appendChild(trailRose);
+    
+    // Animate and remove trail rose
+    trailRose.animate([
+      { transform: "translate(-50%, -50%) scale(1)", opacity: 0.8 },
+      { transform: "translate(-50%, -50%) scale(0)", opacity: 0 }
+    ], {
+      duration: 1000,
+      easing: "ease-out"
+    }).onfinish = () => trailRose.remove();
+    
+    // Button animation
+    noBtn.style.transform = "scale(0.9)";
+    setTimeout(() => {
+      noBtn.style.transform = "scale(1)";
+    }, 100);
+  }
+});
+
+noBtn.addEventListener('click', (e) => {
+  if (noCount >= 8) {
+    // On final click, transform into YES button
+    e.preventDefault();
+    noBtn.innerHTML = "Yes! Accept 🌹";
+    noBtn.style.background = "linear-gradient(135deg, #ff4d6d, #ff758c)";
+    noBtn.style.color = "white";
+    noBtn.style.boxShadow = "0 15px 40px rgba(255, 77, 109, 0.6)";
+    noBtn.style.position = "relative";
+    noBtn.style.left = "auto";
+    noBtn.style.top = "auto";
+    noBtn.style.transform = "scale(1.1)";
+    noBtn.onclick = () => {
+      triggerRoseDayCelebration();
+      createRoseConfetti();
+    };
+    return;
+  }
+  
+  e.preventDefault();
+  noBtn.style.transform = "scale(0.8)";
+  setTimeout(() => {
+    noBtn.style.transform = "scale(1)";
+  }, 150);
+});
+
+// Yes button celebration
+const yesBtn = document.getElementById('yesBtn');
+const celebration = document.getElementById('celebration');
+
+function triggerRoseDayCelebration() {
+  // Play music if not already playing
+  if (!musicPlaying) {
+    bgMusic.volume = 0.3;
+    bgMusic.play().catch(e => console.log("Autoplay prevented:", e));
+    musicPlaying = true;
+    musicToggle.innerHTML = "🎵";
+    musicToggle.style.background = "rgba(255, 255, 255, 0.9)";
+  }
+  
+  // Hide main card with animation
+  const roseCard = document.getElementById('roseCard');
+  roseCard.style.animation = "cardOpen 1s ease-out reverse";
+  roseCard.style.opacity = "0";
+  
+  setTimeout(() => {
+    roseCard.style.display = "none";
+    celebration.classList.add('show');
+    
+    // Create rose petal rain
+    createRosePetalRain();
+    
+    // Create rose fireworks
+    createRoseFireworks();
+    
+    // Create floating rose messages
+    createRoseMessages();
+    
+    // Massive rose confetti burst
+    createRoseConfetti();
+  }, 500);
+}
+
+yesBtn.addEventListener('click', triggerRoseDayCelebration);
+
+// Rose petal rain
+function createRosePetalRain() {
+  const petalCount = 200;
+  const petalColors = ['#ff4d6d', '#ff758c', '#ffafcc', '#ffb3c6', '#ff8fab'];
+  const petalShapes = ['🌸', '🌺', '🌷', '💮'];
+  
+  for (let i = 0; i < petalCount; i++) {
+    const petal = document.createElement('div');
+    petal.innerHTML = petalShapes[Math.floor(Math.random() * petalShapes.length)];
+    petal.style.position = 'fixed';
+    petal.style.fontSize = (20 + Math.random() * 30) + 'px';
+    petal.style.color = petalColors[Math.floor(Math.random() * petalColors.length)];
+    petal.style.left = Math.random() * 100 + 'vw';
+    petal.style.top = '-50px';
+    petal.style.zIndex = '9999';
+    petal.style.opacity = '0.9';
+    petal.style.textShadow = '0 0 10px currentColor';
+    
+    const animation = petal.animate([
+      { transform: `translateY(0) rotate(0deg)`, opacity: 1 },
+      { transform: `translateY(${window.innerHeight + 100}px) rotate(${360 + Math.random() * 360}deg)`, opacity: 0 }
+    ], {
+      duration: 3000 + Math.random() * 4000,
+      easing: 'cubic-bezier(0.1, 0.8, 0.9, 0.1)'
+    });
+    
+    document.body.appendChild(petal);
+    animation.onfinish = () => petal.remove();
+  }
+}
+
+// Rose confetti burst
+function createRoseConfetti() {
+  const confettiCount = 300;
+  const roseColors = ['#ff4d6d', '#ff758c', '#ffafcc', '#ffb3c6', '#ff8fab'];
+  const roseShapes = ['🌹', '💐', '🌺', '🌸', '🌷'];
+  
+  for (let i = 0; i < confettiCount; i++) {
+    const rose = document.createElement('div');
+    rose.innerHTML = roseShapes[Math.floor(Math.random() * roseShapes.length)];
+    rose.style.position = 'fixed';
+    rose.style.fontSize = (20 + Math.random() * 35) + 'px';
+    rose.style.color = roseColors[Math.floor(Math.random() * roseColors.length)];
+    rose.style.left = Math.random() * 100 + 'vw';
+    rose.style.top = '-50px';
+    rose.style.zIndex = '9999';
+    rose.style.opacity = '0.9';
+    rose.style.textShadow = '0 0 15px currentColor';
+    
+    const animation = rose.animate([
+      { transform: `translateY(0) rotate(0deg) scale(1)`, opacity: 1 },
+      { transform: `translateY(${window.innerHeight + 100}px) rotate(${720 + Math.random() * 720}deg) scale(1.5)`, opacity: 0 }
+    ], {
+      duration: 2500 + Math.random() * 3500,
+      easing: 'cubic-bezier(0.1, 0.8, 0.9, 0.1)'
+    });
+    
+    document.body.appendChild(rose);
+    animation.onfinish = () => rose.remove();
+  }
+}
+
+// Rose fireworks
+function createRoseFireworks() {
+  const fireworkInterval = setInterval(() => {
+    if (!celebration.classList.contains('show')) {
+      clearInterval(fireworkInterval);
+      return;
+    }
+    
+    const firework = document.createElement('div');
+    firework.style.position = 'fixed';
+    firework.style.left = Math.random() * 90 + 5 + 'vw';
+    firework.style.top = Math.random() * 90 + 5 + 'vh';
+    firework.style.width = '6px';
+    firework.style.height = '6px';
+    firework.style.background = `hsl(${330 + Math.random() * 30}, 100%, 65%)`;
+    firework.style.borderRadius = '50%';
+    firework.style.boxShadow = '0 0 25px currentColor';
+    firework.style.zIndex = '9998';
+    
+    document.body.appendChild(firework);
+    
+    // Rose explosion
+    setTimeout(() => {
+      for (let i = 0; i < 25; i++) {
+        const particle = document.createElement('div');
+        particle.innerHTML = '🌸';
+        particle.style.position = 'fixed';
+        particle.style.left = firework.style.left;
+        particle.style.top = firework.style.top;
+        particle.style.fontSize = '20px';
+        particle.style.zIndex = '9998';
+        particle.style.color = firework.style.background;
+        
+        const angle = Math.random() * Math.PI * 2;
+        const velocity = 1.5 + Math.random() * 2.5;
+        const vx = Math.cos(angle) * velocity;
+        const vy = Math.sin(angle) * velocity;
+        
+        document.body.appendChild(particle);
+        
+        let x = parseFloat(firework.style.left);
+        let y = parseFloat(firework.style.top);
+        
+        const animateParticle = () => {
+          x += vx;
+          y += vy;
+          particle.style.left = x + 'px';
+          particle.style.top = y + 'px';
+          particle.style.opacity = parseFloat(particle.style.opacity || 1) - 0.02;
+          particle.style.transform = `rotate(${x + y}deg)`;
+          
+          if (parseFloat(particle.style.opacity || 1) > 0) {
+            requestAnimationFrame(animateParticle);
+          } else {
+            particle.remove();
+          }
+        };
+        
+        animateParticle();
+      }
+      firework.remove();
+    }, 600);
+  }, 1200);
+}
+
+// Floating rose messages
+function createRoseMessages() {
+  const messages = [
+    "I love you Amulya!",
+    "Happy Rose Day!",
+    "My beautiful rose 🌹",
+    "Forever yours",
+    "Rose Day love!",
+    "You're my sunshine",
+    "💖 Amulya 💖",
+    "My special girl",
+    "Endless love",
+    "Rose petal promises"
+  ];
+  
+  const messageInterval = setInterval(() => {
+    if (!celebration.classList.contains('show')) {
+      clearInterval(messageInterval);
+      return;
+    }
+    
+    const message = document.createElement('div');
+    message.innerHTML = messages[Math.floor(Math.random() * messages.length)];
+    message.style.position = 'fixed';
+    message.style.left = Math.random() * 100 + 'vw';
+    message.style.top = '100vh';
+    message.style.fontFamily = "'Dancing Script', cursive";
+    message.style.fontSize = (24 + Math.random() * 20) + 'px';
+    message.style.color = `hsl(${330 + Math.random() * 30}, 100%, 65%)`;
+    message.style.opacity = '0.9';
+    message.style.textShadow = '0 0 15px currentColor';
+    message.style.zIndex = '9997';
+    message.style.pointerEvents = 'none';
+    
+    document.body.appendChild(message);
+    
+    const animation = message.animate([
+      { transform: 'translateY(0) scale(1)', opacity: 0 },
+      { transform: 'translateY(-30px) scale(1.2)', opacity: 1 },
+      { transform: `translateY(-${window.innerHeight + 100}px) scale(0.5)`, opacity: 0 }
+    ], {
+      duration: 4000 + Math.random() * 5000,
+      easing: 'cubic-bezier(0.1, 0.8, 0.9, 0.1)'
+    });
+    
+    animation.onfinish = () => message.remove();
+  }, 1800);
+}
+
+// Initial animations
+setTimeout(() => {
+  document.getElementById('roseMessage').style.animation = 'fadeIn 2s forwards';
+  
+  // Create initial rose shower
+  for (let i = 0; i < 20; i++) {
+    setTimeout(() => {
+      const rose = document.createElement("div");
+      rose.className = "rose-fall";
+      rose.innerHTML = "🌹";
+      rose.style.left = Math.random() * 100 + "vw";
+      rose.style.fontSize = (30 + Math.random() * 40) + "px";
+      rose.style.color = `hsl(${340 + Math.random() * 20}, 100%, 65%)`;
+      rose.style.animationDuration = (4 + Math.random() * 6) + "s";
+      document.body.appendChild(rose);
+      setTimeout(() => rose.remove(), 10000);
+    }, i * 100);
+  }
+}, 1000);
+
+// Try to auto-play music on first interaction
+document.addEventListener('click', function initMusic() {
+  if (!musicPlaying) {
+    bgMusic.volume = 0.2;
+    bgMusic.play().catch(e => console.log("Music autoplay prevented"));
+    musicPlaying = true;
+    musicToggle.innerHTML = "🎵";
+  }
+  document.removeEventListener('click', initMusic);
+}, { once: true });
+</script>
+</body>
+</html>
